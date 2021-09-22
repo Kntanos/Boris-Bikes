@@ -8,8 +8,14 @@ end
 
 describe "DockingStation" do
   describe "release_bike" do
-    it 'should gets the bike' do
-      expect(DockingStation.new.release_bike).to be_a(Bike)
+    
+    it 'should create an instance of the Bike class' do
+      expect(DockingStation.new.release_bike).to be_a Bike
     end
+ 
+    it 'should be valid if the bike is working' do
+      expect(DockingStation.new.release_bike.working?).to be true
+    end
+
   end  
 end
