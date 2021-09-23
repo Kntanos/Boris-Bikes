@@ -32,8 +32,15 @@ end
 describe "#dock" do
   station =  DockingStation.new
   bike = Bike.new
+  
   it 'should dock the bike in the docking station' do
     expect(station.dock(bike)).to eq(bike)
+  end
+
+  it 'should raise an error if we dock a new bike when a bike is already present in the dock' do
+    ds = DockingStation.new # instantiated a new instance of DockingStation as raise_error test could not read from station variable
+    ds.dock(Bike.new)
+    expect {ds.dock(Bike.new)}.to raise_error("No space")
   end
 end
 
