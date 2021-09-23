@@ -8,7 +8,6 @@ describe "DockingStation" do
   end
 
   describe "#release_bike" do
-    
     it "should create an instance of the Bike class" do
       expect(station.release_bike).to be_a Bike
     end
