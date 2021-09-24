@@ -14,6 +14,9 @@ end
   it 'should accept one argument' do
     expect(subject).to respond_to(:dock).with(1).argument
   end
+  it 'DockingStation.new should accept one argument' do
+    expect(subject).to respond_to(:new).with(1).argument
+  end
 end
 
 describe "#release_bike" do
