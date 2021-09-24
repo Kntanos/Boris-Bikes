@@ -37,9 +37,9 @@ describe "#dock" do
     expect(station.dock(bike)).to eq([bike])
   end
 
-  it 'should raise an error if we dock a new bike when 20 bikes are already present in the dock' do
+  it 'should raise an error if we dock a new bike when the default capacity of the dock has been reached' do
     ds = DockingStation.new # instantiated a new instance of DockingStation as raise_error test could not read from station variable
-    20.times{ds.dock(Bike.new)}
+    DockingStation::DEFAULT_CAPACITY.times{ds.dock(Bike.new)}
     expect {ds.dock(Bike.new)}.to raise_error("No space")
   end
 end
